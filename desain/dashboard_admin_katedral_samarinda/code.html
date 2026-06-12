@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Dashboard - Katedral Samarinda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#e7c185",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e6e2da",
+                        "outline-variant": "#d1c5b5",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf9f6",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#4e463a",
+                        "on-tertiary-container": "#313030",
+                        "surface-container-high": "#e9e8e5",
+                        "primary-fixed-dim": "#e7c185",
+                        "secondary-fixed-dim": "#c9c6bf",
+                        "on-primary-container": "#422c00",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f2f1ee",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#faf9f6",
+                        "tertiary-fixed": "#e4e2e1",
+                        "inverse-surface": "#2f312f",
+                        "surface-variant": "#e3e2e0",
+                        "on-background": "#1a1c1a",
+                        "on-surface": "#1a1c1a",
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#605e58",
+                        "tertiary": "#5f5e5e",
+                        "primary": "#765a27",
+                        "on-primary-fixed-variant": "#5c4212",
+                        "background": "#faf9f6",
+                        "outline": "#807668",
+                        "on-primary-fixed": "#271900",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-tint": "#765a27",
+                        "surface-container-low": "#f4f3f1",
+                        "on-secondary-fixed": "#1c1c17",
+                        "primary-container": "#b5935b",
+                        "on-secondary-fixed-variant": "#484741",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#999898",
+                        "on-secondary-container": "#66645e",
+                        "primary-fixed": "#ffdeab",
+                        "surface-dim": "#dbdad7",
+                        "secondary-fixed": "#e6e2da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-lg": "64px",
+                        "unit": "8px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "label-md": ["Hanken Grotesk"],
+                        "caption": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .shadow-elegant { box-shadow: 0 4px 20px rgba(45, 45, 45, 0.03); }
+        
+        /* Smooth chart animation */
+        @keyframes drawLine {
+            from { stroke-dashoffset: 1000; }
+            to { stroke-dashoffset: 0; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chart-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 2s ease-out forwards;
+        }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden text-on-surface antialiased">
+<!-- Sidebar -->
+<aside class="w-64 bg-surface-bright border-r border-outline-variant/30 flex flex-col z-20 flex-shrink-0">
+<div class="h-20 flex items-center px-8 border-b border-outline-variant/10">
+<span class="font-headline-md text-headline-md text-primary tracking-tight">Katedral</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant ml-2 opacity-60">Portal</span>
+</div>
+<nav class="flex-1 py-8 px-4 flex flex-col gap-2 overflow-y-auto">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg bg-surface-container-low text-primary relative group" href="#">
+<span class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-6 bg-primary rounded-r-full"></span>
+<span class="material-symbols-outlined text-[20px]" data-weight="fill" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low/50 hover:text-primary transition-colors duration-300 group" href="#">
+<span class="material-symbols-outlined text-[20px]">article</span>
+<span class="font-body-md text-body-md group-hover:font-medium transition-all">Berita &amp; Warta</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low/50 hover:text-primary transition-colors duration-300 group" href="#">
+<span class="material-symbols-outlined text-[20px]">category</span>
+<span class="font-body-md text-body-md group-hover:font-medium transition-all">Kategori Liturgi</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-low/50 hover:text-primary transition-colors duration-300 group" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-body-md text-body-md group-hover:font-medium transition-all">Data Umat</span>
+</a>
+</nav>
+<div class="p-4 border-t border-outline-variant/10">
+<a class="flex items-center gap-4 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-body-md text-body-md">Pengaturan</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0 bg-background relative">
+<!-- Subtle gradient background element for "Elegance" -->
+<div class="absolute top-0 right-0 w-1/2 h-96 bg-gradient-to-b from-surface-container-low/50 to-transparent pointer-events-none -z-10"></div>
+<!-- Top App Bar -->
+<header class="h-20 flex items-center justify-between px-10 bg-surface/60 backdrop-blur-md z-10 sticky top-0">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Dashboard Overview</h1>
+<p class="font-caption text-caption text-on-surface-variant mt-1">Kamis, 24 Oktober 2024</p>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+<div class="w-px h-6 bg-outline-variant/30"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="w-10 h-10 rounded-full bg-surface-container-low border border-outline-variant/30 flex items-center justify-center text-primary group-hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div class="hidden md:block text-right">
+<p class="font-label-md text-label-md text-on-surface">Admin Pusat</p>
+<p class="font-caption text-caption text-on-surface-variant">Sekretariat</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 overflow-y-auto px-10 py-8">
+<div class="max-w-container-max mx-auto space-y-stack-md">
+<!-- Stats Cards (Bento style grid) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1: Berita -->
+<div class="bg-surface-bright rounded-xl p-8 border border-outline-variant/40 shadow-elegant relative overflow-hidden animate-fade-in group hover:border-primary/30 transition-colors duration-500">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-surface-container-low rounded-full opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
+<div class="flex justify-between items-start relative z-10">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-2">Total Berita</h3>
+<div class="font-display-lg text-display-lg text-on-surface group-hover:text-primary transition-colors duration-300">142</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary border border-outline-variant/20">
+<span class="material-symbols-outlined">article</span>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">trending_up</span>
+<span class="font-caption text-caption text-primary">+12 bulan ini</span>
+</div>
+</div>
+<!-- Card 2: Kategori -->
+<div class="bg-surface-bright rounded-xl p-8 border border-outline-variant/40 shadow-elegant relative overflow-hidden animate-fade-in delay-100 group hover:border-primary/30 transition-colors duration-500">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-surface-container-low rounded-full opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
+<div class="flex justify-between items-start relative z-10">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-2">Kategori Aktif</h3>
+<div class="font-display-lg text-display-lg text-on-surface group-hover:text-primary transition-colors duration-300">8</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary border border-outline-variant/20">
+<span class="material-symbols-outlined">category</span>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">horizontal_rule</span>
+<span class="font-caption text-caption text-on-surface-variant">Tetap</span>
+</div>
+</div>
+<!-- Card 3: Pengunjung -->
+<div class="bg-surface-bright rounded-xl p-8 border border-outline-variant/40 shadow-elegant relative overflow-hidden animate-fade-in delay-200 group hover:border-primary/30 transition-colors duration-500">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-surface-container-low rounded-full opacity-50 group-hover:scale-110 transition-transform duration-700"></div>
+<div class="flex justify-between items-start relative z-10">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-2">Pengunjung</h3>
+<div class="font-display-lg text-display-lg text-on-surface group-hover:text-primary transition-colors duration-300">12.4K</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary border border-outline-variant/20">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">trending_up</span>
+<span class="font-caption text-caption text-primary">+8.4% minggu ini</span>
+</div>
+</div>
+</div>
+<!-- Main Chart Section -->
+<div class="bg-surface-bright rounded-xl p-8 border border-outline-variant/40 shadow-elegant animate-fade-in delay-300">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Tren Kunjungan Portal</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Statistik pengunjung unik harian (30 hari terakhir)</p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low rounded-lg p-1 border border-outline-variant/20">
+<button class="px-4 py-1.5 rounded bg-surface shadow-sm font-label-md text-label-md text-primary">Harian</button>
+<button class="px-4 py-1.5 rounded font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Mingguan</button>
+</div>
+</div>
+<!-- SVG Chart Implementation -->
+<div class="w-full h-80 relative">
+<!-- Y-Axis Labels -->
+<div class="absolute left-0 top-0 h-full flex flex-col justify-between text-caption text-on-surface-variant pb-8 pr-4 border-r border-outline-variant/20">
+<span>1000</span>
+<span>750</span>
+<span>500</span>
+<span>250</span>
+<span>0</span>
+</div>
+<!-- Chart Canvas -->
+<div class="absolute left-12 right-0 top-0 bottom-8">
+<!-- Grid lines -->
+<div class="absolute inset-0 flex flex-col justify-between">
+<div class="w-full h-px bg-outline-variant/10"></div>
+<div class="w-full h-px bg-outline-variant/10"></div>
+<div class="w-full h-px bg-outline-variant/10"></div>
+<div class="w-full h-px bg-outline-variant/10"></div>
+<div class="w-full h-px bg-outline-variant/10"></div>
+</div>
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="champagneGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#765a27" stop-opacity="0.15"></stop>
+<stop offset="100%" stop-color="#faf9f6" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Area Fill -->
+<path class="opacity-0" d="M0,250 C100,220 200,280 300,180 C400,80 500,200 600,120 C700,40 800,150 900,80 C950,45 1000,90 1000,90 L1000,300 L0,300 Z" fill="url(#champagneGradient)" style="animation: fadeIn 1.5s ease-out 0.5s forwards;"></path>
+<!-- Line Path -->
+<path class="chart-path drop-shadow-sm" d="M0,250 C100,220 200,280 300,180 C400,80 500,200 600,120 C700,40 800,150 900,80 C950,45 1000,90 1000,90" fill="none" stroke="#765a27" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Data Points (Subtle dots) -->
+<circle class="opacity-0" cx="300" cy="180" fill="#faf9f6" r="4" stroke="#765a27" stroke-width="2" style="animation: fadeIn 0.5s ease-out 1.2s forwards;"></circle>
+<circle class="opacity-0" cx="600" cy="120" fill="#faf9f6" r="4" stroke="#765a27" stroke-width="2" style="animation: fadeIn 0.5s ease-out 1.5s forwards;"></circle>
+<circle class="opacity-0" cx="900" cy="80" fill="#faf9f6" r="4" stroke="#765a27" stroke-width="2" style="animation: fadeIn 0.5s ease-out 1.8s forwards;"></circle>
+</svg>
+</div>
+<!-- X-Axis Labels -->
+<div class="absolute left-12 right-0 bottom-0 flex justify-between text-caption text-on-surface-variant pt-2 border-t border-outline-variant/20">
+<span>1 Okt</span>
+<span>8 Okt</span>
+<span>15 Okt</span>
+<span>22 Okt</span>
+<span>24 Okt</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gereja Katedral Samarinda - Silent Elegance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#e7c185",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e6e2da",
+                        "outline-variant": "#d1c5b5",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf9f6",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#4e463a",
+                        "on-tertiary-container": "#313030",
+                        "surface-container-high": "#e9e8e5",
+                        "primary-fixed-dim": "#e7c185",
+                        "secondary-fixed-dim": "#c9c6bf",
+                        "on-primary-container": "#422c00",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f2f1ee",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#faf9f6",
+                        "tertiary-fixed": "#e4e2e1",
+                        "inverse-surface": "#2f312f",
+                        "surface-variant": "#e3e2e0",
+                        "on-background": "#1a1c1a",
+                        "on-surface": "#1a1c1a",
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#605e58",
+                        "tertiary": "#5f5e5e",
+                        "primary": "#765a27",
+                        "on-primary-fixed-variant": "#5c4212",
+                        "background": "#faf9f6",
+                        "outline": "#807668",
+                        "on-primary-fixed": "#271900",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-tint": "#765a27",
+                        "surface-container-low": "#f4f3f1",
+                        "on-secondary-fixed": "#1c1c17",
+                        "primary-container": "#b5935b",
+                        "on-secondary-fixed-variant": "#484741",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#999898",
+                        "on-secondary-container": "#66645e",
+                        "primary-fixed": "#ffdeab",
+                        "surface-dim": "#dbdad7",
+                        "secondary-fixed": "#e6e2da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-lg": "64px",
+                        "unit": "8px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "label-md": ["Hanken Grotesk"],
+                        "caption": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #FAF9F6; color: #1a1c1a; }
+        .glass-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .soft-shadow { box-shadow: 0 4px 20px rgba(45, 45, 45, 0.04); }
+        .hero-overlay { background: linear-gradient(to top, rgba(26,28,26,0.7) 0%, rgba(26,28,26,0.1) 100%); }
+    </style>
+</head>
+<body class="font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm transition-all duration-300 ease-in-out border-none">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md text-primary dark:text-inverse-primary tracking-tight">
+                Katedral Samarinda
+            </div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-primary dark:text-inverse-primary relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full transition-colors duration-300" href="#">Beranda</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Warta</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Liturgi</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Sejarah</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Kontak</a>
+</div>
+<div class="hidden md:block">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded uppercase tracking-wider hover:bg-on-primary-fixed-variant transition-colors">
+                    Donasi
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full h-[819px] min-h-[600px] flex items-end pb-24 pt-32">
+<div class="absolute inset-0 z-0">
+<img alt="Exterior view of Gereja Katedral Samarinda" class="w-full h-full object-cover object-center" data-alt="A breathtaking, wide-angle architectural photograph of a majestic modern cathedral exterior, likely Gereja Katedral Samarinda. The building features soaring vertical lines, elegant stained glass accents, and a serene, minimalist structure. The lighting is early morning, casting soft, golden hour rays that highlight the pristine bone white facade against a clear, pale blue sky. The composition exudes a sense of reverence, tranquility, and refined elegance. The image embodies a light-mode, airy aesthetic with subtle champagne and deep charcoal tonal contrasts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdzX_LGj6R-wyS9jk2XecoBH_5q_SFH-v8FKnsAk-htk_vXjjwd1_fstdxFuTtfW3pHkOsErI95Oh0N5uM_DYS0S-_3V6FtMorjZPbPEkQ_dn0zn3t7tQGQyqkHCoTDv1Nz5wS8JCUUhvta2XyiKnXVted1kYFS1ah2iUx39mUftvznK2IvypCOKSpekHHSrVs0QDzjmzJx-KQ7ZvrqtjPnTVI_5rqQCkKZyLJ_wTRbX6UOaKkw4kjK83FVKvJqph8BNWZRS0KiQs"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md text-inverse-primary uppercase tracking-widest mb-4 block">Gereja Katedral Samarinda</span>
+<h1 class="font-display-lg text-display-lg text-on-primary mb-6 leading-tight">Selamat Datang di Portal Gereja Katedral Samarinda</h1>
+<p class="font-body-lg text-body-lg text-surface-container-high mb-8 opacity-90">Situs resmi paroki untuk berbagi warta, memperdalam iman, dan merajut persaudaraan dalam kasih Kristus. Mari bertumbuh bersama dalam terang.</p>
+<button class="bg-surface-container-low text-on-surface font-label-md text-label-md px-8 py-3 rounded-lg uppercase tracking-wider hover:bg-surface transition-colors">
+                        Jelajahi Warta
+                    </button>
+</div>
+</div>
+</section>
+<!-- Berita Terbaru (Bento Grid Style) -->
+<section class="py-stack-lg max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-stack-md border-b-[0.5px] border-on-surface/10 pb-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Berita Terbaru</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Kabar terkini dari paroki dan keuskupan.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary hover:text-on-primary-fixed-variant transition-colors font-label-md text-label-md uppercase" href="#">
+                    Lihat Semua <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Featured Article (Span 8) -->
+<article class="col-span-1 md:col-span-8 group cursor-pointer">
+<div class="relative w-full h-80 md:h-[400px] rounded-xl overflow-hidden mb-4 bg-surface-container-low soft-shadow">
+<img alt="Pemberkatan Gedung Karya Pastoral" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A serene indoor photograph capturing a momentous religious ceremony inside a brightly lit, modern cathedral hall. A bishop in traditional, elegant vestments is seen blessing a new congregation space or pastoral building. The lighting is natural, flooding in through tall windows, casting soft shadows on the polished stone floor. The aesthetic is refined minimalism, emphasizing white space, soft champagne tones, and deep charcoal contrasts. The mood is solemn, peaceful, and respectful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf0Et9Sjxi98Be6Mpvgj4lF8_ySoGIvnJXNkZ307MTWrmGf5fVSK3l6XTquuZJSqddIL_jogexgduDr1Us6EXndBOwxeL1AzuQ9ZAues8HuyznfpVaLlulpxF1PKkDvGtvzmlrO9pXGDj9z6-rX177JyggPF5g-dfZ2BJiYyKotmhcghSw2YuMNqcFnZBR5Xra2k0yCFaWqMF_SKWgTeFeNlLpOwJjBfUKzt7w7z515fM1L2NF8CfDpZqyGVRdttz1XvEjK1daQaw"/>
+</div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-surface-container-low text-primary font-label-md text-[10px] px-2 py-1 rounded uppercase tracking-wider">Paroki</span>
+<time class="font-caption text-caption text-on-surface-variant">24 Oktober 2024</time>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">Pemberkatan Gedung Karya Pastoral Baru</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-2">Uskup Agung memimpin perayaan ekaristi syukur dan pemberkatan gedung karya pastoral yang baru selesai direnovasi, menandai babak baru pelayanan umat.</p>
+</article>
+<!-- Side Articles (Span 4) -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-gutter">
+<!-- Article 2 -->
+<article class="flex-1 flex flex-col group cursor-pointer bg-surface-container-low rounded-xl p-6 soft-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="flex items-center gap-3 mb-3">
+<span class="bg-surface text-primary font-label-md text-[10px] px-2 py-1 rounded uppercase tracking-wider">Liturgi</span>
+<time class="font-caption text-caption text-on-surface-variant">22 Oktober 2024</time>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface group-hover:text-primary transition-colors mb-2">Jadwal Misa Hari Raya Semua Orang Kudus</h3>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-3">Pemberitahuan mengenai penyesuaian jadwal perayaan ekaristi pada awal bulan November mendatang untuk memfasilitasi umat.</p>
+</article>
+<!-- Article 3 -->
+<article class="flex-1 flex flex-col group cursor-pointer bg-surface-container-low rounded-xl p-6 soft-shadow hover:-translate-y-1 transition-transform duration-300">
+<div class="flex items-center gap-3 mb-3">
+<span class="bg-surface text-primary font-label-md text-[10px] px-2 py-1 rounded uppercase tracking-wider">Kaum Muda</span>
+<time class="font-caption text-caption text-on-surface-variant">20 Oktober 2024</time>
+</div>
+<h3 class="font-headline-md text-xl text-on-surface group-hover:text-primary transition-colors mb-2">Retret OMK Tingkat Keuskupan di Samarinda</h3>
+<p class="font-body-md text-sm text-on-surface-variant line-clamp-3">Ratusan orang muda Katolik berkumpul untuk merefleksikan peran mereka dalam gereja modern melalui serangkaian sesi doa dan diskusi.</p>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md gap-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md text-primary">
+                Katedral Samarinda
+            </div>
+<div class="font-caption text-caption text-on-surface-variant text-center md:text-left">
+                © 2024 Paroki Gereja Katedral Samarinda. Silent Elegance.
+            </div>
+<div class="flex gap-6 font-caption text-caption opacity-90 hover:opacity-100 transition-all duration-300">
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Kebijakan Privasi</a>
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Ketentuan Layanan</a>
+<a class="text-on-secondary-fixed-variant hover:text-primary transition-colors" href="#">Peta Situs</a>
+</div>
+</div>
+</footer>
+</body></html>

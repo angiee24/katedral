@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sejarah - Katedral Samarinda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e4e2e1",
+                        "surface-variant": "#e3e2e0",
+                        "surface-container": "#efeeeb",
+                        "tertiary": "#5f5e5e",
+                        "on-primary-container": "#422c00",
+                        "on-secondary-container": "#66645e",
+                        "surface-dim": "#dbdad7",
+                        "on-surface-variant": "#4e463a",
+                        "on-surface": "#1a1c1a",
+                        "inverse-on-surface": "#f2f1ee",
+                        "surface-bright": "#faf9f6",
+                        "on-error": "#ffffff",
+                        "outline": "#807668",
+                        "primary-fixed-dim": "#e7c185",
+                        "inverse-primary": "#e7c185",
+                        "background": "#faf9f6",
+                        "surface-container-high": "#e9e8e5",
+                        "on-tertiary-container": "#313030",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "secondary-container": "#e6e2da",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "secondary-fixed": "#e6e2da",
+                        "on-primary-fixed": "#271900",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#484741",
+                        "on-background": "#1a1c1a",
+                        "primary-fixed": "#ffdeab",
+                        "inverse-surface": "#2f312f",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f4f3f1",
+                        "secondary": "#605e58",
+                        "tertiary-container": "#999898",
+                        "primary": "#765a27",
+                        "on-secondary-fixed": "#1c1c17",
+                        "outline-variant": "#d1c5b5",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e3e2e0",
+                        "primary-container": "#b5935b",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#c9c6bf",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface": "#faf9f6",
+                        "surface-tint": "#765a27",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#5c4212"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "64px",
+                        "stack-md": "32px",
+                        "stack-sm": "16px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "caption": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            background-color: theme('colors.primary');
+            opacity: 0.3;
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+                transform: none;
+            }
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-[0_4px_20px_rgba(45,45,45,0.04)]">
+<nav class="flex justify-between items-center px-margin-desktop max-w-container-max mx-auto h-[80px]">
+<a class="font-headline-md text-headline-md text-on-surface" href="#">Katedral Samarinda</a>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-300" href="#">Beranda</a>
+<a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-300" href="#">Warta</a>
+<a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-300" href="#">Liturgi</a>
+<a class="font-label-md text-label-md text-primary relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full" href="#">Sejarah</a>
+<a class="font-label-md text-label-md text-secondary hover:text-primary transition-colors duration-300" href="#">Kontak</a>
+<button class="font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded shadow-sm hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300 active:scale-95">Donasi</button>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="flex-grow pt-[120px] pb-stack-lg">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-lg text-center fade-in-section">
+<h1 class="font-display-lg text-display-lg text-primary mb-stack-sm">Jejak Iman di Tepian Mahakam</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
+                Sebuah perjalanan panjang dari misi awal hingga berdirinya katedral modern. Menelusuri sejarah keuskupan yang terus tumbuh bersama umat di Kalimantan Timur.
+            </p>
+</section>
+<!-- Timeline Section -->
+<section class="relative px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto timeline-line py-stack-md">
+<!-- Item 1: Misi Awal -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-stack-lg w-full fade-in-section">
+<div class="order-1 md:w-5/12 w-full md:text-right md:pr-12 mb-8 md:mb-0 ml-12 md:ml-0">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest block mb-2">1907</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Misi Awal</h3>
+<p class="text-secondary font-body-md">
+                        Misi Katolik pertama tiba di wilayah Samarinda, membawa harapan baru dan memulai pelayanan rohani bagi masyarakat lokal di sepanjang sungai Mahakam. Benih iman mulai ditaburkan dengan penuh dedikasi.
+                    </p>
+</div>
+<div class="z-10 order-2 absolute md:relative left-5 md:left-auto flex items-center justify-center w-4 h-4 bg-surface border-2 border-primary rounded-full shadow-[0_0_0_8px_rgba(250,249,246,1)]"></div>
+<div class="order-3 md:w-5/12 w-full ml-12 md:ml-0">
+<img alt="Historical early mission" class="w-full h-64 object-cover rounded-lg shadow-sm" data-alt="Sepia-toned historical photograph style image of an early 20th-century wooden mission building near a river in a tropical setting. The scene captures a serene, quiet atmosphere with soft, natural lighting filtering through lush green foliage. The mood is historic, reverent, and pioneering. The aesthetic aligns with the refined minimalism and silent elegance theme, emphasizing natural textures and subdued, earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCPP7gaxtwc_1nOCEy0gyAOqfk0oGahOyebvT-Z2qxKuj4qRaDM0IaZ2S_QlRawkyvNOHB3N4DEJDT23YUC5QNOedmXW2c5FtN9CtPySGPIT_Pov0imsIY6sCu2rdoBDPPL-hsTha1tbUBtkhVV6gUj_LAQ76HqxfyfUNdWHrEVaA70boi0odGfT5cj3doXsrd_f_36Or1OquBiYhIH3EPTqPW_FmvIE7JqNNtihgQT5wBll3HDF5aFfkmllQEURQqSVCpgTEzSOo"/>
+</div>
+</div>
+<!-- Item 2: Pembangunan Gereja Pertama -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-stack-lg w-full fade-in-section">
+<div class="order-1 md:order-3 md:w-5/12 w-full md:text-left md:pl-12 mb-8 md:mb-0 ml-12 md:ml-0">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest block mb-2">1950-an</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Pembangunan Gereja Pertama</h3>
+<p class="text-secondary font-body-md">
+                        Seiring bertambahnya umat, gereja paroki pertama dibangun. Struktur kayu sederhana namun kokoh ini menjadi pusat kehidupan menggereja, tempat berkumpulnya komunitas yang semakin solid dalam iman dan persaudaraan.
+                    </p>
+</div>
+<div class="z-10 order-2 absolute md:relative left-5 md:left-auto flex items-center justify-center w-4 h-4 bg-surface border-2 border-primary rounded-full shadow-[0_0_0_8px_rgba(250,249,246,1)]"></div>
+<div class="order-3 md:order-1 md:w-5/12 w-full ml-12 md:ml-0">
+<img alt="First church construction" class="w-full h-64 object-cover rounded-lg shadow-sm" data-alt="Black and white archival style photo of a modest wooden church building with a simple cross on top, surrounded by parishioners. The setting is mid-20th century, capturing a sense of community gathering. The lighting is bright daylight, creating soft shadows. The overall aesthetic feels grounded, historical, and deeply rooted in the 'Silent Elegance' theme, reflecting the solemnity and simplicity of the era." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-MWATxjQ77T4XYSVNLd81vrSneXQhLgW4HjLW3S4uLK__TOrBYDyhZ2D4Y4GSt3O6m6OXL2FA07dCVwiRNlMsayMH_9kXflTzZu9KXFAHtiXDSjj-W4XzOcswaeC0B7mng_MLw1DSQDQD_q-U7gjLRGvosIf7fflR-iO0TDkfemraFI_GK5pDlzSo8YTLUlHejHccaDGDN6l9Hl2QjbXyGlkB2QapdhkhqBVCNXB_43rIBz18OLZ7dk4AdOKRDPNEChhh0y1GB1M"/>
+</div>
+</div>
+<!-- Item 3: Status Keuskupan -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-stack-lg w-full fade-in-section">
+<div class="order-1 md:w-5/12 w-full md:text-right md:pr-12 mb-8 md:mb-0 ml-12 md:ml-0">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest block mb-2">2003</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Peningkatan Status Keuskupan Agung</h3>
+<p class="text-secondary font-body-md">
+                        Sebuah tonggak sejarah penting ketika Samarinda ditingkatkan statusnya menjadi Keuskupan Agung. Ini menandai kedewasaan gereja lokal dan tanggung jawab yang lebih besar dalam menggembalakan umat di Kalimantan Timur.
+                    </p>
+</div>
+<div class="z-10 order-2 absolute md:relative left-5 md:left-auto flex items-center justify-center w-4 h-4 bg-surface border-2 border-primary rounded-full shadow-[0_0_0_8px_rgba(250,249,246,1)]"></div>
+<div class="order-3 md:w-5/12 w-full ml-12 md:ml-0">
+<div class="w-full h-64 bg-surface-container rounded-lg shadow-sm flex items-center justify-center p-8 text-center border border-on-surface/[0.05]">
+<span class="material-symbols-outlined text-primary text-6xl mb-4" style="font-variation-settings: 'FILL' 0;">church</span>
+<p class="font-headline-md text-headline-md text-on-surface">Pusat Keuskupan</p>
+</div>
+</div>
+</div>
+<!-- Item 4: Renovasi Modern -->
+<div class="relative flex flex-col md:flex-row items-center justify-between mb-stack-lg w-full fade-in-section">
+<div class="order-1 md:order-3 md:w-5/12 w-full md:text-left md:pl-12 mb-8 md:mb-0 ml-12 md:ml-0">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest block mb-2">Masa Kini</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Renovasi Modern &amp; Masa Depan</h3>
+<p class="text-secondary font-body-md">
+                        Katedral mengalami renovasi untuk mengakomodasi kebutuhan umat modern dengan tetap mempertahankan nilai historis. Arsitektur megah yang melambangkan keagungan Tuhan, menjadi ikon spiritual dan kebanggaan umat Katolik Samarinda.
+                    </p>
+</div>
+<div class="z-10 order-2 absolute md:relative left-5 md:left-auto flex items-center justify-center w-4 h-4 bg-primary rounded-full shadow-[0_0_0_8px_rgba(250,249,246,1)]"></div>
+<div class="order-3 md:order-1 md:w-5/12 w-full ml-12 md:ml-0">
+<img alt="Modern Cathedral" class="w-full h-80 object-cover rounded-lg shadow-sm" data-alt="A beautifully composed photograph of a modern, majestic cathedral interior, characterized by soaring vaulted ceilings and minimalist elegant design. The space is filled with soft, diffused natural light pouring through tall, clear windows, highlighting the clean lines and spaciousness. The color palette features bone white, soft champagne, and antique gold accents. The atmosphere is profoundly tranquil, airy, and deeply reverent, perfectly embodying the 'Silent Elegance' theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt0rJfY4QbwD2EhRaauMYiM6ytJhXolBtTx6d0-ruNLs4s_dyHoZDkueGkIirQgKnkzBzjQo11hfQG_lEv3oa6hc6VPZTjCuvtrYN9dlVePG_Xr-0EaxsCzs-skdaEbTZMK-FrxW_cVK1B1DwYsHx3idNgYXvTLPNsA734jdyVQj2hlwq_ct--Kc70RrGcm-4oAjolcT0VkdufsvJJPLhaeCtxmaij3SAw7KKEgtIzQR7kdwC4dIqz9gx6wIEaZELJYxEgx5aq2s0"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-stack-md bg-surface-container-low border-t border-on-surface/[0.1] mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-gutter">
+<div class="font-headline-md text-headline-md text-on-surface opacity-80 hover:opacity-100 transition-opacity">Katedral Samarinda</div>
+<div class="font-caption text-caption text-secondary text-center md:text-left">
+                © 2024 Katedral Samarinda. Silent Elegance.
+            </div>
+<div class="flex gap-4">
+<a class="font-caption text-caption text-secondary hover:text-primary hover:underline transition-all" href="#">Privasi</a>
+<a class="font-caption text-caption text-secondary hover:text-primary hover:underline transition-all" href="#">Bantuan</a>
+<a class="font-caption text-caption text-secondary hover:text-primary hover:underline transition-all" href="#">Peta Situs</a>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

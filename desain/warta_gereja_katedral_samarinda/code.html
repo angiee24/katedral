@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Warta Paroki - Katedral Samarinda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#e7c185",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#e6e2da",
+                        "outline-variant": "#d1c5b5",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#faf9f6",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#4e463a",
+                        "on-tertiary-container": "#313030",
+                        "surface-container-high": "#e9e8e5",
+                        "primary-fixed-dim": "#e7c185",
+                        "secondary-fixed-dim": "#c9c6bf",
+                        "on-primary-container": "#422c00",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f2f1ee",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#faf9f6",
+                        "tertiary-fixed": "#e4e2e1",
+                        "inverse-surface": "#2f312f",
+                        "surface-variant": "#e3e2e0",
+                        "on-background": "#1a1c1a",
+                        "on-surface": "#1a1c1a",
+                        "surface-container": "#efeeeb",
+                        "surface-container-highest": "#e3e2e0",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#605e58",
+                        "tertiary": "#5f5e5e",
+                        "primary": "#765a27",
+                        "on-primary-fixed-variant": "#5c4212",
+                        "background": "#faf9f6",
+                        "outline": "#807668",
+                        "on-primary-fixed": "#271900",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-tint": "#765a27",
+                        "surface-container-low": "#f4f3f1",
+                        "on-secondary-fixed": "#1c1c17",
+                        "primary-container": "#b5935b",
+                        "on-secondary-fixed-variant": "#484741",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#999898",
+                        "on-secondary-container": "#66645e",
+                        "primary-fixed": "#ffdeab",
+                        "surface-dim": "#dbdad7",
+                        "secondary-fixed": "#e6e2da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "stack-lg": "64px",
+                        "unit": "8px",
+                        "container-max": "1120px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "label-md": ["Hanken Grotesk"],
+                        "caption": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #faf9f6; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md bg-transparent shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-md text-primary hover:text-primary transition-colors duration-300" href="#">Katedral Samarinda</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Beranda</a>
+<a class="font-body-md text-body-md text-primary relative after:content-[''] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full hover:text-primary transition-colors duration-300" href="#">Warta</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Liturgi</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Sejarah</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Kontak</a>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors hidden md:block">Donasi</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[104px] pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header & Filters -->
+<header class="mb-stack-lg flex flex-col items-center text-center">
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface mb-stack-sm">Warta Paroki</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-md">Kabar terbaru, jadwal liturgi, dan informasi komunitas dari Paroki Gereja Katedral Samarinda.</p>
+<div class="w-full max-w-3xl flex flex-col md:flex-row gap-4 items-center bg-surface-container-low p-2 rounded-xl">
+<div class="relative w-full flex-grow">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 pl-12 pr-4 py-3 font-body-md text-body-md text-on-surface placeholder-outline-variant" placeholder="Cari warta..." type="text"/>
+</div>
+<div class="h-8 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="flex gap-2 w-full md:w-auto overflow-x-auto no-scrollbar pb-2 md:pb-0 px-2 md:px-0">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md">Semua</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full hover:bg-surface-variant text-on-surface-variant font-label-md text-label-md transition-colors">Liturgi</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full hover:bg-surface-variant text-on-surface-variant font-label-md text-label-md transition-colors">Komunitas</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full hover:bg-surface-variant text-on-surface-variant font-label-md text-label-md transition-colors">Pengumuman</button>
+</div>
+</div>
+</header>
+<!-- News Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 (Featured/Large) -->
+<article class="col-span-1 md:col-span-2 lg:col-span-2 bg-surface-container-low rounded-xl overflow-hidden group cursor-pointer">
+<div class="relative h-64 md:h-80 w-full overflow-hidden">
+<img alt="Jadwal Misa Pekan Suci" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene view inside a grand cathedral bathed in warm, soft sunlight streaming through high stained-glass windows. Rows of empty wooden pews lead towards an ornate altar, creating a sense of quiet reverence and anticipation. The light mode aesthetic highlights the subtle gold and cream tones of the stone architecture, evoking a peaceful, historical, and elegant atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Vrmu6N3Db4lsv4crQ8jXqwiSxbgrQ7vsk7AaPIhjMjPd2zlTOhX_KxVEUxNuTrlDkBUXGpMWAuQYf16HHJl8kLEvnVktgbeuNfa1c5KbAplKMw7BSO_94Mz-I5IiZDj9tvuAvGg6-ZofCJUMPo1tZFXWzq7hYFQB80KAIOcHtcpmC33Tg3Kd23nCyAdcbiwRGxbxOcvhgi86E9K5a1Z6wn_xqZNKIVWjbnvbST9wzj6oZ_Hp1BtdJWYHCBtyhdMVxDUmW2UyC5M"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface/90 backdrop-blur text-primary font-label-md text-label-md px-3 py-1 rounded-md uppercase">Liturgi</span>
+</div>
+</div>
+<div class="p-6 md:p-8">
+<time class="font-caption text-caption text-outline mb-2 block">12 Maret 2024</time>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-3 group-hover:text-primary transition-colors">Jadwal Misa Pekan Suci 2024 Paroki Katedral</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Berikut adalah jadwal lengkap perayaan Ekaristi untuk Pekan Suci, mulai dari Minggu Palma hingga Minggu Paskah di Katedral Samarinda.</p>
+<span class="font-label-md text-label-md text-primary flex items-center gap-1">Baca selengkapnya <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden group cursor-pointer">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Pertemuan OMK" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A diverse group of young adults sitting in a circle in a bright, modern parish hall, engaged in a heartfelt discussion. Soft natural light illuminates their faces, emphasizing a sense of community, joy, and active participation. The setting feels airy and welcoming, utilizing light neutral tones to maintain the serene elegance of the overall design aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk6MTSIUdamX715QFcDbZtO6ShzHdjW0ayoka3TQeA7VmitgG9SwDl7h91kksQPTDrftPvoBCl6CSoHOW9kqyhx0JOrDpijqslpZOPSLZmz4p07WtTSLoh9EoCAS8ZJ296MjXSFQuRa-LM0D-5e5HKvQ4SbEJm3hcMJIKGmugxKG5fPu3Nm2ozHrt5upaeHANgWI1p5vx7PzGvMQU862xii1rDktGVXy-kypUQpZ-JfC2mO-ywmZ1iF1BnmJQARl3E1HsxLu5vBJc"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface/90 backdrop-blur text-primary font-label-md text-label-md px-3 py-1 rounded-md uppercase">Komunitas</span>
+</div>
+</div>
+<div class="p-6">
+<time class="font-caption text-caption text-outline mb-2 block">10 Maret 2024</time>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Rekoleksi OMK Menyambut Paskah</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Orang Muda Katolik mengundang seluruh kaum muda untuk hadir dalam rekoleksi persiapan batin menyambut kebangkitan Kristus.</p>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden group cursor-pointer">
+<div class="p-6 h-full flex flex-col">
+<div class="mb-4">
+<span class="bg-primary/10 text-primary font-label-md text-label-md px-3 py-1 rounded-md uppercase inline-block">Pengumuman</span>
+</div>
+<time class="font-caption text-caption text-outline mb-2 block">08 Maret 2024</time>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Pembaruan Tata Tertib Parkir Gereja</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Mengingat meningkatnya jumlah umat pada perayaan Ekaristi akhir pekan, terdapat penyesuaian area parkir untuk kenyamanan bersama.</p>
+<span class="font-label-md text-label-md text-primary flex items-center gap-1 mt-auto">Detail <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden group cursor-pointer">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Latihan Koor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of elegant sheet music resting on a wooden stand, subtly out of focus in the background are members of a choir singing in a well-lit, architecturally beautiful church interior. The scene conveys devotion and musical harmony, relying on soft, diffused lighting and a refined color palette of warm whites, gentle golds, and soft shadows to match a peaceful UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzcrqPuctsBUKVtGp5jJfWQKqae7dtgQKnzUlBm9HHLvXMyYFJjvd34m5hquH9qYajNeSoGCgmV6QPMiy37pFLXeodSXK1S20LlZm4724cssmY5g8UOh7b5Hvbr9t3q7FytXmDVHlID1NXWFDi9HMSsI1eORB5s3drYd8exd2TvR-ra9qqfmfbDakAbPpJ56XI9PGjQALofJcqQVTw5XW0yXeJGGPJQOoZD90cyuYCvM2-GDT1TIsHhE-2jQAtB4Tlympor4jHejY"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface/90 backdrop-blur text-primary font-label-md text-label-md px-3 py-1 rounded-md uppercase">Komunitas</span>
+</div>
+</div>
+<div class="p-6">
+<time class="font-caption text-caption text-outline mb-2 block">05 Maret 2024</time>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Penerimaan Anggota Koor Paroki</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2">Koor Paroki membuka kesempatan bagi umat yang ingin melayani Tuhan melalui pujian untuk bergabung dalam audisi bulan ini.</p>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden group cursor-pointer">
+<div class="p-6 h-full flex flex-col">
+<div class="mb-4">
+<span class="bg-primary/10 text-primary font-label-md text-label-md px-3 py-1 rounded-md uppercase inline-block">Liturgi</span>
+</div>
+<time class="font-caption text-caption text-outline mb-2 block">01 Maret 2024</time>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Jadwal Pengakuan Dosa Masa Prapaskah</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Sakramen Tobat akan dilayani setiap hari Jumat setelah Misa sore dan hari Sabtu pagi selama masa Prapaskah.</p>
+<span class="font-label-md text-label-md text-primary flex items-center gap-1 mt-auto">Detail <span class="material-symbols-outlined text-[18px]">arrow_forward</span></span>
+</div>
+</article>
+</div>
+<!-- Load More -->
+<div class="mt-stack-lg flex justify-center">
+<button class="bg-transparent text-on-surface font-label-md text-label-md px-8 py-3 rounded-lg border border-outline/30 hover:border-primary hover:text-primary transition-colors">Muat Lebih Banyak</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-low border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-md gap-4 max-w-container-max mx-auto">
+<p class="font-caption text-caption text-on-surface opacity-90">© 2024 Paroki Gereja Katedral Samarinda. Silent Elegance.</p>
+<div class="flex gap-6">
+<a class="font-caption text-caption text-on-secondary-fixed-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Kebijakan Privasi</a>
+<a class="font-caption text-caption text-on-secondary-fixed-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Ketentuan Layanan</a>
+<a class="font-caption text-caption text-on-secondary-fixed-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Peta Situs</a>
+</div>
+</div>
+</footer>
+</body></html>
