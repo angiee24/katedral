@@ -5,7 +5,7 @@
       <div class="mb-6">
         <Link 
           href="/warta" 
-          class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-primary hover:text-on-primary-fixed-variant uppercase tracking-wider group"
+          class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-primary hover:text-on-primary-fixed-variant uppercase tracking-wider group smooth-btn"
         >
           <span class="material-symbols-outlined transition-transform duration-300 group-hover:-translate-x-1 text-[18px]">
             arrow_back
@@ -15,7 +15,7 @@
       </div>
 
       
-      <div v-if="post.media" class="w-full h-[409px] md:h-[614px] bg-surface-container-high rounded-xl overflow-hidden mb-8 relative shadow-sm">
+      <div v-if="post.media" class="w-full h-[409px] md:h-[614px] bg-surface-container-high rounded-xl overflow-hidden mb-8 relative shadow-sm header-image-anim">
         <img 
           :src="post.media.url" 
           :alt="post.title" 
@@ -27,11 +27,11 @@
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter pt-4">
         
-        <div class="md:col-span-8 flex flex-col">
+        <div class="md:col-span-8 flex flex-col warta-detail-content">
           
           <div class="mb-8">
             <div class="flex items-center gap-4 mb-4">
-              <span class="bg-[#F7F3EB] text-primary px-3 py-1 rounded font-label-md text-label-md uppercase tracking-wider">
+              <span class="bg-[#F7F3EB] text-primary px-3 py-1 rounded font-label-md text-label-md uppercase tracking-wider border border-outline-variant/30">
                 {{ post.category?.name }}
               </span>
               <span class="text-on-surface-variant font-caption text-caption flex items-center gap-1">
@@ -68,9 +68,9 @@
         </div>
 
         
-        <aside class="md:col-span-4 space-y-stack-md mt-stack-md md:mt-0 flex flex-col gap-6 text-left">
+        <aside class="md:col-span-4 space-y-stack-md mt-stack-md md:mt-0 flex flex-col gap-6 text-left warta-detail-sidebar">
           
-          <div class="bg-[#F7F3EB] rounded-xl p-6 shadow-sm">
+          <div class="bg-[#F7F3EB] rounded-xl p-6 shadow-sm border border-outline-variant/10">
             <h3 class="font-headline-md text-headline-md text-on-background mb-6 flex items-center gap-2">
               <span class="material-symbols-outlined text-primary">trending_up</span> 
               Berita Terpopuler
@@ -81,7 +81,7 @@
                   <span class="font-caption text-caption text-primary mb-1 block">
                     {{ formatDate(pop.published_at) }}
                   </span>
-                  <h4 class="font-body-md text-body-md text-on-background group-hover:text-primary transition-colors line-clamp-2 font-semibold">
+                  <h4 class="font-body-md text-body-md text-on-background group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 line-clamp-2 font-semibold">
                     {{ pop.title }}
                   </h4>
                 </Link>
@@ -101,7 +101,7 @@
                 :key="cat.id"
                 :href="`/warta`"
                 :data="{ category: cat.slug }"
-                class="bg-surface text-on-surface-variant border border-outline-variant/30 px-4 py-2 rounded-full font-label-md text-label-md hover:border-primary hover:text-primary transition-colors"
+                class="bg-surface text-on-surface-variant border border-outline-variant/20 px-4 py-2 rounded-full font-label-md text-label-md hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300 smooth-btn shadow-sm hover:shadow"
               >
                 {{ cat.name }}
               </Link>
@@ -114,13 +114,35 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import { Link } from '@inertiajs/vue3';
+import { gsap } from 'gsap';
 import AppLayout from '@/Layouts/AppLayout.vue';
 
 defineProps({
   post: Object,
   popularPosts: Array,
   categories: Array,
+});
+
+onMounted(() => {
+  // Fade in header image if exists
+  gsap.fromTo('.header-image-anim', 
+    { scale: 0.98, opacity: 0 }, 
+    { scale: 1, opacity: 1, duration: 0.8, ease: 'power3.out' }
+  );
+
+  // Fade in warta content
+  gsap.fromTo('.warta-detail-content', 
+    { y: 30, opacity: 0 }, 
+    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 }
+  );
+  
+  // Fade in sidebar items
+  gsap.fromTo('.warta-detail-sidebar > div', 
+    { y: 30, opacity: 0 }, 
+    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', stagger: 0.15, delay: 0.2 }
+  );
 });
 
 const formatDate = (dateStr) => {
@@ -149,5 +171,15 @@ const getInitials = (name) => {
   border-radius: 0.75rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(118, 90, 39, 0.1);
+}
+.article-content :deep(img) {
+  border-radius: 0.75rem;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 </style>
+

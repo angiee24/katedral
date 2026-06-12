@@ -2,13 +2,13 @@
   <AppLayout>
     <div class="pt-[32px] pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
       
-      <header class="mb-stack-lg flex flex-col items-center text-center">
+      <header class="mb-stack-lg flex flex-col items-center text-center warta-header">
         <h1 class="font-display-lg text-display-lg md:text-display-lg text-on-surface mb-stack-sm">Warta Paroki</h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-stack-md">
           Kabar terbaru, jadwal liturgi, dan informasi komunitas dari Paroki Gereja Katedral Samarinda.
         </p>
         
-        <div class="w-full max-w-3xl flex flex-col md:flex-row gap-4 items-center bg-surface-container-low p-2 rounded-xl">
+        <div class="w-full max-w-3xl flex flex-col md:flex-row gap-4 items-center bg-surface-container-low p-2 rounded-xl border border-outline-variant/20 focus-within:border-primary/50 focus-within:ring-2 focus-within:ring-primary/10 transition-all duration-300">
           
           <div class="relative w-full flex-grow">
             <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
@@ -28,8 +28,8 @@
             <Link 
               href="/warta"
               :data="filters.q ? { q: filters.q } : {}"
-              class="whitespace-nowrap px-4 py-2 rounded-full font-label-md text-label-md transition-colors"
-              :class="!selectedCategory ? 'bg-primary/10 text-primary' : 'hover:bg-surface-variant text-on-surface-variant'"
+              class="whitespace-nowrap px-4 py-2 rounded-full font-label-md text-label-md transition-all duration-300 smooth-btn"
+              :class="!selectedCategory ? 'bg-primary/10 text-primary' : 'hover:bg-primary/5 hover:text-primary text-on-surface-variant'"
             >
               Semua
             </Link>
@@ -39,8 +39,8 @@
               :key="cat.id"
               href="/warta"
               :data="{ ... (filters.q ? { q: filters.q } : {}), category: cat.slug }"
-              class="whitespace-nowrap px-4 py-2 rounded-full font-label-md text-label-md transition-colors"
-              :class="selectedCategory === cat.slug ? 'bg-primary/10 text-primary' : 'hover:bg-surface-variant text-on-surface-variant'"
+              class="whitespace-nowrap px-4 py-2 rounded-full font-label-md text-label-md transition-all duration-300 smooth-btn"
+              :class="selectedCategory === cat.slug ? 'bg-primary/10 text-primary' : 'hover:bg-primary/5 hover:text-primary text-on-surface-variant'"
             >
               {{ cat.name }}
             </Link>
@@ -54,11 +54,12 @@
           <article 
             v-for="(post, index) in posts.data" 
             :key="post.id"
-            class="bg-surface-container-low rounded-xl overflow-hidden group cursor-pointer flex flex-col justify-between"
+            @click="router.visit(`/warta/${post.slug}`)"
+            class="bg-surface-container-low rounded-xl overflow-hidden group cursor-pointer flex flex-col justify-between premium-hover-card border border-outline-variant/10 shadow-sm hover:shadow-md fade-in-card"
             :class="index === 0 ? 'col-span-1 md:col-span-2 lg:col-span-2' : ''"
           >
             
-            <Link :href="`/warta/${post.slug}`" class="block w-full overflow-hidden relative">
+            <div class="block w-full overflow-hidden relative">
               <div :class="index === 0 ? 'h-64 md:h-80' : 'h-48'" class="w-full overflow-hidden bg-[#FAF9F6] flex items-center justify-center">
                 <img 
                   :src="post.media ? post.media.url : '/images/logo_katedral.png'" 
@@ -71,7 +72,7 @@
                   {{ post.category?.name }}
                 </span>
               </div>
-            </Link>
+            </div>
 
             
             <div :class="index === 0 ? 'p-6 md:p-8 flex-grow flex flex-col justify-between' : 'p-6 flex-grow flex flex-col justify-between'">
@@ -83,20 +84,17 @@
                   :class="index === 0 ? 'font-headline-lg text-headline-lg' : 'font-headline-md text-headline-md'" 
                   class="text-on-surface mb-3 group-hover:text-primary transition-colors line-clamp-2"
                 >
-                  <Link :href="`/warta/${post.slug}`">
-                    {{ post.title }}
-                  </Link>
+                  {{ post.title }}
                 </h2>
                 <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
                   {{ post.excerpt }}
                 </p>
               </div>
-              <Link 
-                :href="`/warta/${post.slug}`" 
-                class="font-label-md text-label-md text-primary flex items-center gap-1 mt-auto hover:text-on-primary-fixed-variant transition-colors"
+              <span 
+                class="font-label-md text-label-md text-primary flex items-center gap-1 mt-auto group-hover:text-on-primary-fixed-variant transition-colors"
               >
                 Baca selengkapnya <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </Link>
+              </span>
             </div>
           </article>
         </div>
@@ -112,10 +110,10 @@
             <Link 
               v-else
               :href="link.url"
-              class="px-4 py-2 rounded-lg text-[13px] font-semibold transition-all duration-300 border"
+              class="px-4 py-2 rounded-lg text-[13px] font-semibold border smooth-btn"
               :class="link.active 
                 ? 'bg-primary text-white border-primary shadow-sm' 
-                : 'bg-white text-secondary border-outline-variant/30 hover:border-primary hover:text-primary'"
+                : 'bg-white text-secondary border-outline-variant/20 hover:border-primary hover:text-primary'"
               v-html="link.label"
             ></Link>
           </template>
@@ -133,9 +131,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { Link, router } from '@inertiajs/vue3';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AppLayout from '@/Layouts/AppLayout.vue';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const props = defineProps({
   posts: Object,
@@ -169,6 +171,32 @@ const formatDate = (dateStr) => {
     year: 'numeric'
   });
 };
+
+onMounted(() => {
+  // Animasi header & filter
+  gsap.fromTo('.warta-header', 
+    { y: 30, opacity: 0 }, 
+    { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
+  );
+
+  // Animasi warta cards
+  gsap.utils.toArray('.fade-in-card').forEach((el) => {
+    gsap.fromTo(el,
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 90%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+  });
+});
 </script>
 
 <style scoped>
@@ -180,3 +208,4 @@ const formatDate = (dateStr) => {
   scrollbar-width: none;  
 }
 </style>
+

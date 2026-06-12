@@ -12,27 +12,24 @@
         </Link>
         
         
+        <!-- Navigation Links (Desktop) -->
         <div class="hidden md:flex items-center gap-8 font-body-md text-body-md">
           <Link 
             v-for="link in navLinks" 
             :key="link.path"
             :href="link.path"
-            class="transition-colors duration-300 relative py-1"
-            :class="isRouteActive(link.path) 
-              ? 'text-primary after:content-[\'\'] after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full' 
-              : 'text-on-surface-variant hover:text-primary'"
+            class="transition-colors duration-300 py-1 sliding-underline-link"
+            :class="isRouteActive(link.path) ? 'text-primary active font-medium' : 'text-on-surface-variant hover:text-primary'"
           >
             {{ link.label }}
           </Link>
         </div>
 
-
-
-        
+        <!-- Mobile Menu Trigger -->
         <button 
           @click="mobileMenuOpen = !mobileMenuOpen"
           aria-label="Menu" 
-          class="md:hidden text-on-surface p-2 hover:bg-surface-variant/50 rounded-full transition-colors"
+          class="md:hidden text-on-surface p-2 hover:bg-surface-variant/50 rounded-full transition-colors cursor-pointer"
         >
           <span class="material-symbols-outlined block">
             {{ mobileMenuOpen ? 'close' : 'menu' }}
@@ -40,31 +37,66 @@
         </button>
       </div>
 
-      
-      <transition
-        enter-active-class="transition duration-200 ease-out"
-        enter-from-class="opacity-0 -translate-y-4"
-        enter-to-class="opacity-100 translate-y-0"
-        leave-active-class="transition duration-150 ease-in"
-        leave-from-class="opacity-100 translate-y-0"
-        leave-to-class="opacity-0 -translate-y-4"
-      >
-        <div 
-          v-if="mobileMenuOpen" 
-          class="md:hidden bg-surface border-t border-outline-variant/10 px-margin-mobile py-4 flex flex-col gap-4 shadow-lg"
-        >
-          <Link 
-            v-for="link in navLinks" 
-            :key="link.path"
-            :href="link.path" 
-            @click="mobileMenuOpen = false"
-            class="py-2 font-body-md text-body-md transition-colors"
-            :class="isRouteActive(link.path) ? 'text-primary font-semibold' : 'text-on-surface-variant hover:text-primary'"
+      <!-- Navigation Links (Mobile Slide-over Drawer) -->
+      <teleport to="body">
+        <div v-if="mobileMenuOpen" class="fixed inset-0 z-50 md:hidden flex justify-end">
+          <!-- Backdrop -->
+          <transition
+            enter-active-class="transition-opacity ease-out duration-300"
+            enter-from-class="opacity-0"
+            enter-to-class="opacity-100"
+            leave-active-class="transition-opacity ease-in duration-200"
+            leave-from-class="opacity-100"
+            leave-to-class="opacity-0"
+            appear
           >
-            {{ link.label }}
-          </Link>
+            <div class="fixed inset-0 bg-black/45 backdrop-blur-sm" @click="mobileMenuOpen = false"></div>
+          </transition>
+
+          <!-- Drawer Content -->
+          <transition
+            enter-active-class="transition ease-out duration-300 transform"
+            enter-from-class="translate-x-full"
+            enter-to-class="translate-x-0"
+            leave-active-class="transition ease-in duration-200 transform"
+            leave-from-class="translate-x-0"
+            leave-to-class="translate-x-full"
+            appear
+          >
+            <div class="relative w-80 max-w-full glass-drawer h-full shadow-2xl p-6 flex flex-col gap-8 z-10 border-l border-outline-variant/10 text-left">
+              <div class="flex items-center justify-between border-b border-outline-variant/10 pb-4">
+                <span class="font-serif text-[20px] text-primary font-bold">Navigasi</span>
+                <button 
+                  @click="mobileMenuOpen = false" 
+                  class="p-2 hover:bg-surface-variant/40 rounded-full transition-colors text-on-surface cursor-pointer"
+                >
+                  <span class="material-symbols-outlined block">close</span>
+                </button>
+              </div>
+              
+              <div class="flex flex-col gap-4">
+                <Link 
+                  v-for="link in navLinks" 
+                  :key="link.path"
+                  :href="link.path" 
+                  @click="mobileMenuOpen = false"
+                  class="py-3 px-4 rounded-lg font-body-md text-[15px] font-semibold transition-all duration-300 flex items-center justify-between group"
+                  :class="isRouteActive(link.path) 
+                    ? 'bg-primary/10 text-primary' 
+                    : 'text-on-surface-variant hover:bg-surface-container/50 hover:text-primary'"
+                >
+                  <span>{{ link.label }}</span>
+                  <span class="material-symbols-outlined text-[18px] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">chevron_right</span>
+                </Link>
+              </div>
+
+              <div class="mt-auto border-t border-outline-variant/10 pt-6 text-center text-[11px] text-on-surface-variant/60">
+                <p>© {{ new Date().getFullYear() }} Katedral Samarinda</p>
+              </div>
+            </div>
+          </transition>
         </div>
-      </transition>
+      </teleport>
     </nav>
 
     

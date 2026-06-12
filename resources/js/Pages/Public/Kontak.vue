@@ -1,14 +1,14 @@
 <template>
   <AppLayout>
     <div class="pt-14 pb-stack-lg px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
-      <div class="text-center mb-stack-lg max-w-2xl mx-auto">
+      <div class="text-center mb-stack-lg max-w-2xl mx-auto fade-in-section">
         <h1 class="font-display-lg text-display-lg text-on-background mb-4">Hubungi Kami</h1>
         <p class="font-body-lg text-body-lg text-on-surface-variant">
           Kami menyambut dengan hangat setiap pertanyaan, doa, atau niat baik Anda. Silakan hubungi sekretariat paroki melalui informasi di bawah ini.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter text-left">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter text-left fade-in-section">
         
         <div class="col-span-1 md:col-span-5 flex flex-col gap-stack-md">
           <div class="card-champagne flex flex-col gap-6">
@@ -145,7 +145,7 @@
               
               <div class="mt-4 flex justify-end">
                 <button 
-                  class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded active:scale-95 transition-transform flex items-center gap-2" 
+                  class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg flex items-center gap-2 smooth-btn cursor-pointer shadow-sm disabled:opacity-50" 
                   type="submit"
                   :disabled="form.processing"
                 >
@@ -162,9 +162,32 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useForm, usePage } from '@inertiajs/vue3';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AppLayout from '@/Layouts/AppLayout.vue';
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  gsap.utils.toArray('.fade-in-section').forEach((el) => {
+    gsap.fromTo(el,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+  });
+});
 
 const props = defineProps({
   address: String,

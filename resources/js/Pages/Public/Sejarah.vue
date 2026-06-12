@@ -19,9 +19,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
           
           <div 
-            class="lg:col-span-5 bg-surface-container-low rounded-2xl p-8 flex flex-col justify-center border border-[#d1c5b5]/30 relative overflow-hidden group min-h-[250px]"
+            class="lg:col-span-5 bg-white border border-outline-variant/20 rounded-2xl p-8 flex flex-col justify-center relative overflow-hidden group min-h-[250px] premium-hover-card shadow-sm hover:shadow-md transition-all duration-300"
           >
-            <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110 duration-500"></div>
+            <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-115 duration-500"></div>
             <span class="material-symbols-outlined text-primary text-4xl mb-6 relative z-10">visibility</span>
             <h3 class="font-serif text-[22px] md:text-[24px] text-on-surface mb-4 relative z-10">Visi Kami</h3>
             <p class="text-secondary text-[15px] leading-relaxed relative z-10">
@@ -31,7 +31,7 @@
 
           
           <div 
-            class="lg:col-span-7 bg-surface-container-low rounded-2xl p-8 border border-[#d1c5b5]/30 relative overflow-hidden flex flex-col justify-center min-h-[250px]"
+            class="lg:col-span-7 bg-white border border-outline-variant/20 rounded-2xl p-8 relative overflow-hidden flex flex-col justify-center min-h-[250px] premium-hover-card shadow-sm hover:shadow-md transition-all duration-300"
           >
             <span class="material-symbols-outlined text-primary text-4xl mb-6">explore</span>
             <h3 class="font-serif text-[22px] md:text-[24px] text-on-surface mb-4">Misi Kami</h3>
@@ -78,7 +78,7 @@
 
           
           <div 
-            class="z-10 order-2 absolute md:relative left-5 md:left-auto flex items-center justify-center w-4 h-4 bg-surface border-2 rounded-full transition-all duration-300 shadow-[0_0_0_8px_rgba(250,249,246,1)]"
+            class="z-10 order-2 absolute md:relative left-5 md:left-auto flex items-center justify-center w-4 h-4 bg-surface border-2 rounded-full transition-all duration-300 shadow-[0_0_0_8px_rgba(250,249,246,1)] group-hover:scale-125 group-hover:border-primary group-hover:bg-primary group-hover:ring-4 group-hover:ring-primary/20"
             :class="activeCard === index ? 'bg-primary border-primary scale-125 ring-4 ring-primary/25' : 'border-primary bg-surface'"
           ></div>
 

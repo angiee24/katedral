@@ -24,7 +24,7 @@
           <div ref="heroBtn">
             <Link 
               href="/warta" 
-              class="bg-surface-container-low text-on-surface font-label-md text-label-md px-8 py-3 rounded-lg uppercase tracking-wider hover:bg-surface transition-colors inline-block text-center shadow"
+              class="bg-primary text-on-primary font-label-md text-label-md px-8 py-3 rounded-lg uppercase tracking-wider hover:bg-[#60491f] transition-all inline-block text-center shadow-md smooth-btn cursor-pointer"
             >
               Jelajahi Warta
             </Link>
@@ -52,7 +52,7 @@
         
         <article 
           @click="router.visit(`/warta/${featuredPost.slug}`)"
-          class="col-span-1 md:col-span-8 group cursor-pointer text-left"
+          class="col-span-1 md:col-span-8 group cursor-pointer text-left premium-hover-card border border-outline-variant/20 rounded-2xl p-4 md:p-6 bg-white shadow-sm"
         >
           <div class="relative w-full h-80 md:h-[400px] rounded-xl overflow-hidden mb-4 bg-surface-container-low soft-shadow">
             <img 
@@ -62,7 +62,7 @@
             />
           </div>
           <div class="flex items-center gap-3 mb-2">
-            <span class="bg-surface-container-low text-primary font-label-md text-[10px] px-2 py-1 rounded uppercase tracking-wider">
+            <span class="bg-primary/10 text-primary font-label-md text-[10px] px-2 py-1 rounded uppercase tracking-wider">
               {{ featuredPost.category?.name }}
             </span>
             <time class="font-caption text-caption text-on-surface-variant">
@@ -83,10 +83,10 @@
             v-for="post in sidePosts" 
             :key="post.id"
             @click="router.visit(`/warta/${post.slug}`)"
-            class="flex-1 flex flex-col group cursor-pointer bg-surface-container-low rounded-xl p-6 soft-shadow hover:-translate-y-1 transition-transform duration-300"
+            class="flex-1 flex flex-col group cursor-pointer bg-white border border-outline-variant/20 rounded-2xl p-6 shadow-sm premium-hover-card"
           >
             <div class="flex items-center gap-3 mb-3">
-              <span class="bg-surface text-primary font-label-md text-[10px] px-2 py-1 rounded uppercase tracking-wider">
+              <span class="bg-primary/10 text-primary font-label-md text-[10px] px-2 py-1 rounded uppercase tracking-wider">
                 {{ post.category?.name }}
               </span>
               <time class="font-caption text-caption text-on-surface-variant">

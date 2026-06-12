@@ -2,7 +2,7 @@
   <AppLayout>
     <div class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-stack-lg pt-8">
       
-      <section class="mb-stack-lg pt-stack-md text-center">
+      <section class="mb-stack-lg pt-stack-md text-center fade-in-section">
         <h1 class="font-display-lg text-display-lg text-on-surface mb-unit">Liturgi &amp; Pelayanan</h1>
         <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto">
           Membangun iman melalui perayaan Ekaristi dan pelayanan sakramen yang khusyuk, menjadi oase rohani bagi umat Katolik di Samarinda.
@@ -11,7 +11,7 @@
         <div class="mt-8 flex justify-center">
           <button 
             @click="showPosterModal = true"
-            class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded active:scale-95 transition-transform uppercase tracking-wider shadow-sm flex items-center gap-2"
+            class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg uppercase tracking-wider shadow-sm flex items-center gap-2 smooth-btn cursor-pointer"
           >
             <span class="material-symbols-outlined text-[18px]">image</span>
             <span>Lihat Poster Jadwal</span>
@@ -20,7 +20,7 @@
       </section>
 
       
-      <section class="mb-stack-lg">
+      <section class="mb-stack-lg fade-in-section">
         <div class="flex items-center justify-between mb-stack-sm border-b border-on-surface/[0.1] pb-unit">
           <h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-on-surface flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">schedule</span>
@@ -30,16 +30,16 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
           
-          <div class="bg-surface-champagne rounded-xl p-8 diffused-shadow text-left">
-            <h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline/20 pb-2">Misa Harian</h3>
+          <div class="bg-surface-champagne border border-outline-variant/30 rounded-2xl p-6 md:p-8 diffused-shadow premium-hover-card text-left">
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/30 pb-2">Misa Harian</h3>
             <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
               <li 
                 v-for="misa in harianMasses" 
                 :key="misa.id"
-                class="flex justify-between items-center py-2 border-b border-tertiary/[0.1] last:border-none"
+                class="flex justify-between items-center py-2.5 border-b border-outline-variant/20 last:border-none hover:translate-x-1 transition-transform"
               >
-                <span>{{ getMassDayLabel(misa) }}</span>
-                <span class="font-medium">{{ misa.event_time }}</span>
+                <span class="font-semibold">{{ getMassDayLabel(misa) }}</span>
+                <span class="font-bold text-primary">{{ misa.event_time }}</span>
               </li>
               <li v-if="harianMasses.length === 0" class="text-center py-4 text-secondary">
                 Belum ada jadwal misa harian.
@@ -48,16 +48,16 @@
           </div>
 
           
-          <div class="bg-surface-champagne rounded-xl p-8 diffused-shadow text-left">
-            <h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline/20 pb-2">Misa Akhir Pekan</h3>
+          <div class="bg-surface-champagne border border-outline-variant/30 rounded-2xl p-6 md:p-8 diffused-shadow premium-hover-card text-left">
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/30 pb-2">Misa Akhir Pekan</h3>
             <ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
               <li 
                 v-for="misa in akhirPekanMasses" 
                 :key="misa.id"
-                class="flex justify-between items-center py-2 border-b border-tertiary/[0.1] last:border-none"
+                class="flex justify-between items-center py-2.5 border-b border-outline-variant/20 last:border-none hover:translate-x-1 transition-transform"
               >
-                <span>{{ getMassDayLabel(misa) }}</span>
-                <span class="font-medium">{{ misa.event_time }}</span>
+                <span class="font-semibold">{{ getMassDayLabel(misa) }}</span>
+                <span class="font-bold text-primary">{{ misa.event_time }}</span>
               </li>
               <li v-if="akhirPekanMasses.length === 0" class="text-center py-4 text-secondary">
                 Belum ada jadwal misa akhir pekan.
@@ -68,7 +68,7 @@
       </section>
 
       
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-stack-md mb-stack-lg">
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-stack-md mb-stack-lg fade-in-section">
         
         <div class="space-y-6 text-left" data-aos="fade-up">
           <div class="flex items-center gap-2 pb-2 border-b border-on-surface/[0.1]">
@@ -127,55 +127,55 @@
       </section>
 
       
-      <section class="mb-stack-lg">
+      <section class="mb-stack-lg fade-in-section">
         <h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-on-surface mb-stack-md text-center">
           Pelayanan Liturgi
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter text-left">
           
-          <div class="bg-surface-container-lowest border border-outline/10 rounded-xl p-6 hover:shadow-[0_4px_20px_rgba(45,45,45,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div class="bg-white border border-outline-variant/20 rounded-2xl p-6 flex flex-col justify-between premium-hover-card shadow-sm hover:shadow-md transition-all duration-300">
             <div>
               <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
                 <span class="material-symbols-outlined">music_note</span>
               </div>
               <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Koor Paduan Suara</h3>
-              <p class="font-body-md text-body-md text-secondary mb-6">
+              <p class="font-body-md text-body-md text-secondary mb-6 leading-relaxed">
                 Mendukung perayaan Ekaristi melalui nyanyian rohani yang mengangkat hati umat kepada Tuhan.
               </p>
             </div>
-            <a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1 mt-auto" href="#">
+            <a class="text-primary font-label-md text-label-md hover:text-[#60491f] flex items-center gap-1 mt-auto transition-colors" href="#">
               Informasi Bergabung <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
           
           
-          <div class="bg-surface-container-lowest border border-outline/10 rounded-xl p-6 hover:shadow-[0_4px_20px_rgba(45,45,45,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div class="bg-white border border-outline-variant/20 rounded-2xl p-6 flex flex-col justify-between premium-hover-card shadow-sm hover:shadow-md transition-all duration-300">
             <div>
               <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
                 <span class="material-symbols-outlined">menu_book</span>
               </div>
               <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Lektor &amp; Pemazmur</h3>
-              <p class="font-body-md text-body-md text-secondary mb-6">
+              <p class="font-body-md text-body-md text-secondary mb-6 leading-relaxed">
                 Mewartakan Sabda Allah dan memandu umat dalam nyanyian mazmur tanggapan selama perayaan.
               </p>
             </div>
-            <a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1 mt-auto" href="#">
+            <a class="text-primary font-label-md text-label-md hover:text-[#60491f] flex items-center gap-1 mt-auto transition-colors" href="#">
               Informasi Bergabung <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
           
           
-          <div class="bg-surface-container-lowest border border-outline/10 rounded-xl p-6 hover:shadow-[0_4px_20px_rgba(45,45,45,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div class="bg-white border border-outline-variant/20 rounded-2xl p-6 flex flex-col justify-between premium-hover-card shadow-sm hover:shadow-md transition-all duration-300">
             <div>
               <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
                 <span class="material-symbols-outlined">local_fire_department</span>
               </div>
               <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Putra-Putri Altar</h3>
-              <p class="font-body-md text-body-md text-secondary mb-6">
+              <p class="font-body-md text-body-md text-secondary mb-6 leading-relaxed">
                 Membantu Imam di seputar Altar, melatih kaum muda dalam pelayanan sakral dan kedisiplinan rohani.
               </p>
             </div>
-            <a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1 mt-auto" href="#">
+            <a class="text-primary font-label-md text-label-md hover:text-[#60491f] flex items-center gap-1 mt-auto transition-colors" href="#">
               Informasi Bergabung <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
@@ -218,8 +218,31 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AppLayout from '@/Layouts/AppLayout.vue';
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  gsap.utils.toArray('.fade-in-section').forEach((el) => {
+    gsap.fromTo(el,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+  });
+});
 
 const props = defineProps({
   masses: Array,
