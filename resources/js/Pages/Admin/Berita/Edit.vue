@@ -255,7 +255,10 @@ const removeImage = () => {
 };
 
 const submit = () => {
-  form.put(`/admin/berita/${props.post.id}`, {
+  form.transform((data) => ({
+    ...data,
+    _method: 'PUT',
+  })).post(`/admin/berita/${props.post.id}`, {
     onSuccess: () => {
       
     }

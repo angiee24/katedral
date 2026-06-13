@@ -19,7 +19,7 @@ class PostService
 
             
             if ($data['status'] === 'published') {
-                $data['published_at'] = $data['published_at'] ?? now();
+                $data['published_at'] = !empty($data['published_at']) ? Carbon::parse($data['published_at']) : now();
             } elseif ($data['status'] === 'scheduled') {
                 $data['published_at'] = Carbon::parse($data['published_at']);
             } else {
@@ -47,7 +47,7 @@ class PostService
             
             if (isset($data['status'])) {
                 if ($data['status'] === 'published') {
-                    $data['published_at'] = $data['published_at'] ?? $post->published_at ?? now();
+                    $data['published_at'] = !empty($data['published_at']) ? Carbon::parse($data['published_at']) : ($post->published_at ?? now());
                 } elseif ($data['status'] === 'scheduled') {
                     $data['published_at'] = Carbon::parse($data['published_at']);
                 } else {

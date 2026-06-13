@@ -20,7 +20,15 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' => (function() {
+                if (isset($_SERVER['DOCUMENT_ROOT'])) {
+                    $serverStorage = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+                    if (is_dir($serverStorage) && !is_link($serverStorage)) {
+                        return $serverStorage;
+                    }
+                }
+                return storage_path('app/public');
+            })(),
             'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/storage',
             'visibility' => 'public',
             'throw' => false,

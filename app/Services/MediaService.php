@@ -15,6 +15,10 @@ class MediaService
         $filename = time() . '_' . Str::random(10) . '.' . $file->getClientOriginalExtension();
         $filepath = 'media/' . $filename;
         
+        // Cache metadata at the start to prevent stat failed exceptions
+        $fileSize = $file->getSize();
+        $mimeType = $file->getClientMimeType();
+        $originalName = $file->getClientOriginalName();
         
         $stream = fopen($file->getPathname(), 'r');
         Storage::disk('public')->put($filepath, $stream);
@@ -25,11 +29,11 @@ class MediaService
         $url = '/storage/' . $filepath;
 
         return Media::create([
-            'filename' => $file->getClientOriginalName(),
+            'filename' => $originalName,
             'filepath' => $filepath,
             'url' => $url,
-            'mime_type' => $file->getClientMimeType(),
-            'size' => $file->getSize(),
+            'mime_type' => $mimeType,
+            'size' => $fileSize,
             'user_id' => $userId,
         ]);
     }
