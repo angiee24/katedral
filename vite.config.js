@@ -5,8 +5,6 @@ import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-    base: '/katedral/',
-
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
@@ -17,7 +15,6 @@ export default defineConfig({
                 }),
             ],
         }),
-
         vue({
             template: {
                 transformAssetUrls: {
@@ -26,16 +23,13 @@ export default defineConfig({
                 },
             },
         }),
-
         tailwindcss(),
     ],
-
     resolve: {
         alias: {
             '@': '/resources/js',
         },
     },
-
     server: {
         watch: {
             ignored: ['**/storage/framework/views/**'],
